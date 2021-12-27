@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Shoket | Developer</title>
+    <meta content="Accept payments online with Shoket" name="description">
+    <link href="{{ url_for('static', filename='shoket_web/developer/css/main.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <nav class="global-nav global-nav--transparent">
+        <div class="container">
+            <div class="global-nav__left">
+                <a class="global-nav__logo">
+                    <!--<img src="images/logo.svg" alt="Shoket">-->
+                </a>
+            </div>
+            <div class="global-nav__right">
+                <ul class="global-nav__menu">
+                    <li class="global-nav__item global-nav__item--has-dropdown">
+                        <a href="#">
+                            Developers
+                        </a>
+                        <ul class="global-dropdown-menu">
+                            <li class="global-dropdown-menu__item">
+                                <a href="{{ url_for('developer_documentation_main.documentation_main') }}">Documentation</a>
+                            </li>
+                            <li class="global-dropdown-menu__item">
+                                <a href="#">Products</a>
+                            </li>
+                            <li class="global-dropdown-menu__item">
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="global-dropdown-menu__divider"></li>
+                            <li class="global-dropdown-menu__item global-dropdown-menu__item--muted">
+                                <a href="#">Home</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="global-nav__item"><a href="#">Pricing</a></li>
+                    <li class="global-nav__button">
+                        <a href="{{ url_for('login_page.logins_page') }}" class="button button--default">
+                            Log In
+                        </a>
+                    </li>
+                    <li class="global-nav__button">
+                        <a href="{{ url_for('registration_page.register_page') }}" class="button button--blue">
+                            Create Free Account
+                        </a>
+                    </li>
+                </ul>
+                <div class="global-mobile-nav">
+                    <div class="global-mobile-nav__trigger" id="mobile-nav-trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="global-mobile-nav-menu" id="mobile-nav-menu">
+                        <div class="grid grid--with-gutters">
+                            <div class="grid__column grid__column--7-s">
+                                <li class="global-mobile-nav-menu__label">DEVELOPERS</li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Documentation</a>
+                                </li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Tools</a>
+                                </li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Dashboard</a>
+                                </li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Code Samples</a>
+                                </li>
+                            </div>
+                            <div class="grid__column grid__column--5-s">
+                                <li class="global-mobile-nav-menu__label">PRODUCT</li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Pay Link</a>
+                                </li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">API</a>
+                                </li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Cards</a>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <section class="feature-header">
+        <div class="container">
+            <h1 class="feature-header__primary-title" style="color: #fff;">Verify Transaction</h1>
+            <p style="color: #fff;">Make a request to verify the status of transaction.</p>
+        </div>
+    </section>
+    <section class="faqs-section">
+        <div class="container">
+            <div class="grid grid--flex">
+                <div class="grid__column grid__column--relative grid__column--3">
+                    <div class="faqs-nav-container">
+                        <ul class="faqs-nav" id="faqs-nav">
+                            <li><a class="faqs-nav__item faqs-nav__item--is-active" href="#overview">Overview</a></li>
+                            <li><a class="faqs-nav__item" href="#post-request">Make a request</a></li>
+                            <li><a class="faqs-nav__item" href="#status">Returned status table</a></li>
+                            <li><a class="faqs-nav__item" href="#http-status">HTTP Status</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid__column grid__column--9">
+                    <div class="faqs">
+                        <div class="faqs__group" id="overview">
+                            <h2 class="faqs__group-label">Overview</h2>
+                            <div class="faqs-item">
+                                <div class="faqs-item__answer">
+                                    <p>Make a GET request to verify the status of a transaction.</p>
+                                </div>
+                            </div>
+                            <div class="faqs-item">
+                                <h3 class="faqs-item__question">Authentication</h3>
+                                <div class="faqs-item__answer">
+                                    <p>Authenticate your API calls by including your secret key in the Authorization header of every request you make.</p>
+                                    <p>Shoket private key can be <a href="#" class="faqs-item__link">obtained here.</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faqs__group" id="post-request">
+                            <h2 class="faqs__group-label">Make a request</h2>
+                            <div class="faqs-item">
+                                <div class="faqs-item__answer">
+                                    <p>Here is an example of a POST request to charge a customer.</p>
+                                    <p>You need to pass a transaction reference in the URL while making a request.</p>
+                                    <p class="prettyprint">
+                                        <span style="color:rgb(250, 120, 45)">curl</span> --location --request <span style="color:rgb(194, 247, 237)">GET</span> <span style="color:rgb(173, 219, 103)">'http://127.0.0.1:5000/transaction/verify/OB3J177Lqnp6Rg6wHqr3q'</span> \ <br>
+                                        --header <span style="color:rgb(173, 219, 103)">'Authorization: Bearer sk_test_shdjkhdj827391nV4Lid'</span> \ <br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faqs-item">
+                                <div class="faqs-item__answer">
+                                    <p>After making a GET request Shoket will return a JSON data with transaction data.</p>
+                                    <p style="color: #000;">NOTICE: The returned transaction data does not mean that the transaction was made succesfully, you have to verify that the status of transaction is Success(this identifies that the transaction was completed). Please read down the table of Status and their meaning.</p>
+                                    <p>Here is the sample of returned JSON data.</p>
+                                    <!-- Needs update -->
+                                    <p class="prettyprint">
+                                        { <br>
+                                            &nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"Status"</span>: <span style="color:rgb(173, 219, 103)">"success" </span>,<br>
+                                            &nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"customer"</span> { <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"customer_code"</span>: <span style="color:rgb(173, 219, 103)">"376FcD3gbidW"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"email"</span>: <span style="color:rgb(173, 219, 103)">"user@user.com"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"first_name"</span>: <span style="color:rgb(173, 219, 103)">"John"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"last_name"</span>: <span style="color:rgb(173, 219, 103)">"Doe"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"id"</span>: <span style="color:rgb(90, 184, 247)">64043</span> <br>
+                                            &nbsp;&nbsp;&nbsp; }, <br>
+                                            &nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"data"</span>: { <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"amount"</span>: <span style="color:rgb(90, 184, 247)">64000</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"channel"</span>: <span style="color:rgb(173, 219, 103)">"Halotel"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"currency"</span>: <span style="color:rgb(173, 219, 103)">"TSH"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"number_used"</span>: <span style="color:rgb(173, 219, 103)">"0663803078"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"status"</span>: <span style="color:rgb(173, 219, 103)">"Success"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"transaction_date"</span>: <span style="color:rgb(173, 219, 103)">"2021-06-27 15:08:59.917691"</span> <br>
+                                            &nbsp;&nbsp;&nbsp; }, <br>
+                                            &nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"message"</span>: <span style="color:rgb(173, 219, 103)">"Transaction is completed"</span>, <br>
+                                            &nbsp;&nbsp;&nbsp; <span style="color:rgb(250, 120, 45)">"reference"</span>: <span style="color:rgb(173, 219, 103)">"adz49dS428b7kbDTdG4MN"</span>
+                                        <br> }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faqs__group" id="status">
+                            <h2 class="faqs__group-label">Returned status table</h2>
+                            <div class="faqs-item">
+                                <div class="faqs-item__answer">
+                                    <table class="style-table">
+                                        <tr>
+                                            <th>Status</th>
+                                            <th>Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Success</td>
+                                            <td>Transaction is completed succesfully</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pending</td>
+                                            <td>Transaction is in progress and is not completed yet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Uncomplete</td>
+                                            <td>Transaction is not completed yet for customer to pay</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faqs__group" id="http-status">
+                            <h2 class="faqs__group-label">HTTP Status</h2>
+                            <div class="faqs-item">
+                                <div class="faqs-item__answer">
+                                    <table class="style-table">
+                                        <tr>
+                                            <th>Error Code</th>
+                                            <th>Message</th>
+                                            <th>Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td>200, 201</td>
+                                            <td>Success</td>
+                                            <td>Request was successful and intended action was carried out. Note that we will always send a 200 if a charge or verify 
+                                                request was made. Do check the data object to know how the charge went (i.e. successful or failed).</td>
+                                        </tr>
+                                        <tr>
+                                            <td>401</td>
+                                            <td>Not Authorized</td>
+                                            <td>The request sent was not authorized due not invalid Secret Key or more.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>422</td>
+                                            <td>Invalid Input</td>
+                                            <td>This may be caused by passing empty some fieldes which are required or by incorrect paramenter.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>404</td>
+                                            <td>Resource Not Found</td>
+                                            <td>The resource your requesting is not available.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>400</td>
+                                            <td>Bad Request</td>
+                                            <td>An error happened in the client side</td>
+                                        </tr>
+                                        <tr>
+                                            <td>500</td>
+                                            <td>Server Error</td>
+                                            <td>Request denied due to error in Shoket Server.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>405</td>
+                                            <td>Method Not Allowed</td>
+                                            <td>The method used in the request is not allowed for the requested URL.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>403</td>
+                                            <td>Forbidden</td>
+                                            <td>You don't have permission to access the requested resource</td>
+                                        </tr>
+                                        <tr>
+                                            <td>429</td>
+                                            <td>Too Many Requests</td>
+                                            <td>You have made too many requests. Please look at our late limiting description</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </section>
+    <section class="global-signup">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__column grid__column--6 grid__column--centered">
+                    <h2 class="global-signup__primary-title">
+                        Sign Up. Go Live. Get Paid.
+                    </h2>
+                    <h3 class="global-signup__secondary-title">
+                        Shoket is an easy to setup, complete payments solution for your business. Try Out.
+                    </h3>
+                    <ul class="global-signup__call-to-action">
+                        <li class="global-signup__button">
+                            <a class="button button--blue" href="{{ url_for('registration_page.register_page') }}">Create Account</a>
+                        </li>
+                        <li class="global-signup__button">
+                            <a class="button button--default" href="{{ url_for('login_page.logins_page') }}">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="global-footer">
+        <div class="container">
+            <div class="global-footer__grid grid">
+                <div class="grid__column grid__column--3 grid__column--6-s">
+                    <div class="global-footer__menu-container">
+                        <h4 class="global-footer__menu-header">Product</h4>
+                        <ul class="global-footer__menu">
+                            <li><a href="">Payment API</a></li>
+                            <li><a href="">Payment Link</a></li>
+                            <li><a href="">Payment Number</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid__column grid__column--3 grid__column--6-s">
+                    <h4 class="global-footer__menu-header">Developers</h4>
+                    <ul class="global-footer__menu">
+                        <li><a href="">Libraries and SDKs</a></li>
+                        <li><a href="">API Documentation</a></li>
+                        <li><a href="">Code Samples</a></li>
+                    </ul>
+                </div>
+                <div class="grid__column grid__column--6">
+                    <div class="grid__column grid__column--6 grid__column--6-s">
+                        <h4 class="global-footer__menu-header">Dar Es Salaam</h4>
+                        <p class="global-footer__address">Address.</p>
+                        <a href="" class="global-footer__contact">hey@shoket.com</a>
+                    </div>
+                </div>
+                <div class="grid__column grid__column--12">
+                    <div class="global-footer__copyright">© 2021, Shoket Payments Limited</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="{{ url_for('static', filename='shoket_web/developer/js/vendor/waypoints.min.js') }}"></script>
+<script>
+window.onload = function() {
+    var nav = document.getElementById('faqs-nav');
+    var offset = nav.clientHeight + 150;
+    var sections = document.querySelectorAll('.faqs__group');
+    // fix for weird width change that occurs when #faqs-nav fixed
+    document.getElementById('faqs-nav').style.width = document.getElementById('faqs-nav').clientWidth + 'px';
+
+    var fixTop = new Waypoint({
+        element: nav,
+        handler: function(direction) {
+            if (direction == "down") {
+                nav.classList.add("faqs-nav--is-fixed");
+            } else {
+                nav.classList.remove("faqs-nav--is-fixed");
+            }
+        },
+        offset: "0"
+    });
+
+    var unfixTop = new Waypoint({
+        element: document.querySelector('.global-signup'),
+        handler: function(direction) {
+            if (direction == "down") {
+                nav.classList.add("faqs-nav--is-hidden");
+            } else {
+                nav.classList.remove("faqs-nav--is-hidden");
+            }
+        },
+        offset: offset
+    });
+
+    for (var i = 0; i < sections.length; i++) {
+        new Waypoint({
+            element: sections[i],
+            handler: function(direction) {
+                var navLink = getNavLinkItem(this);
+                if (direction == 'down') {
+                    navLink.classList.add('faqs-nav__item--is-active');
+                    if (this.previous()) {
+                        var prevLink = getNavLinkItem(this.previous());
+                        prevLink.classList.remove('faqs-nav__item--is-active');
+                    }
+                } 
+            },
+            group: 'sectionsDown',
+            offset: '64'
+        });
+
+        new Waypoint({
+            element: sections[i],
+            handler: function(direction) {
+                var navLink = getNavLinkItem(this);
+                if (direction == 'up') {
+                    navLink.classList.add('faqs-nav__item--is-active');
+                    if (this.next()) {
+                        var nextLink = getNavLinkItem(this.next());
+                        nextLink.classList.remove('faqs-nav__item--is-active');
+                    }
+                }
+            },
+            group: 'sectionsUp',
+            offset: '-64'
+        })
+    }
+
+    function getNavLinkItem(wayPointObj) {
+        return document.querySelector("a[href='#" + wayPointObj.element.getAttribute('id') + "']");
+    }
+}
+</script>
+
+</html>

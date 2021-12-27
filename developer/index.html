@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shoket | Developer</title>
+    <meta name="description" content="Accept payments online with Shoket">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='shoket_web/developer/css/main.css') }}">
+</head>
+
+<body>
+    <nav class="global-nav global-nav--transparent">
+        <div class="container">
+            <div class="global-nav__left">
+                <a class="global-nav__logo">
+                    <!--<img src="images/logo.svg" alt="Shoket">-->
+                </a>
+            </div>
+            <div class="global-nav__right">
+                <ul class="global-nav__menu">
+                    <li class="global-nav__item global-nav__item--has-dropdown">
+                        <a href="#">
+                            Developers
+                        </a>
+                        <ul class="global-dropdown-menu">
+                            <li class="global-dropdown-menu__item">
+                                <a href="{{ url_for('developer_documentation_main.documentation_main') }}">Documentation</a>
+                            </li>
+                            <li class="global-dropdown-menu__item">
+                                <a href="#">Products</a>
+                            </li>
+                            <li class="global-dropdown-menu__item">
+                                <a href="#">Dashboard</a>
+                            </li>
+                            <li class="global-dropdown-menu__divider"></li>
+                            <li class="global-dropdown-menu__item global-dropdown-menu__item--muted">
+                                <a href="#">Home</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="global-nav__item"><a href="#">Pricing</a></li>
+                    <li class="global-nav__button">
+                        <a href="{{ url_for('login_page.logins_page') }}" class="button button--default">
+                            Log In
+                        </a>
+                    </li>
+                    <li class="global-nav__button">
+                        <a href="{{ url_for('registration_page.register_page') }}" class="button button--blue">
+                            Create Free Account
+                        </a>
+                    </li>
+                </ul>
+                <div class="global-mobile-nav">
+                    <div class="global-mobile-nav__trigger" id="mobile-nav-trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="global-mobile-nav-menu" id="mobile-nav-menu">
+                        <div class="grid grid--with-gutters">
+                            <div class="grid__column grid__column--7-s">
+                                <li class="global-mobile-nav-menu__label">Resources</li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Documentation</a>
+                                </li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Products</a>
+                                </li>
+                                <li class="global-mobile-nav-menu__item">
+                                    <a href="#">Dashboard</a>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <section class="hero-section hero-section--features">
+        <div class="hero-section__background"></div>
+        <div class="hero-section__content">
+            <!-- <div class="hero-section__icon">
+            </div> -->
+            <h2 class="hero-section__secondary-title">You have 30 minutes remained to start accepting payments online 😊😊</h2>
+        </div>
+    </section>
+    <section class="features-list-section" style="background-color: white;">
+        <div class="container">
+            <div class="grid grid--with-gutters">
+                <div class="grid__column grid__column--6">
+                    <div class="feature-card">
+                        <div class="feature-card__text">
+                            <h3 class="feature-card__name">Accept Payments</h3>
+                            <h4 class="feature-card__description">Accept payments from all mobile money accounts.</h4>
+                        </div>
+                        <div class="feature-card__call-to-action">
+                            <a href="{{ url_for('accept_payment_documentation.accept_payment_doc') }}" class="button button--light">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__column grid__column--6">
+                    <div class="feature-card">
+                        <div class="feature-card__text">
+                            <h3 class="feature-card__name">Verify Transaction</h3>
+                            <h4 class="feature-card__description">Verify status of the transaction made by your customer.</h4>
+                        </div>
+                        <div class="feature-card__call-to-action">
+                            <a href="{{ url_for('verify_payment_documentation.verify_payment_doc') }}" class="button button--light">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-section pricing-section--value">
+        <div class="container">
+            <div class="pricing-section__divider"></div>
+            <div class="grid">
+                <div class="grid__column  grid__column--centered">
+                    <div class="home-section-header company-section-header--centered">
+                        <h2 class="home-section-header__primary-title">Learn more with our demo's and tutoliars</h2>
+                        <h4 class="home-section-header__secondary-title">We have developed simple projects and tutoliars that use Shoket API that will be a big help.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="values-section">
+                <div class="grid grid--with-gutters">
+                    <div class="grid__column grid__column--6">
+                        <div class="value-item">
+                            <div class="value-item__title">E-commerce project</div>
+                            <div class="value-item__text">
+                                Comming soon.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__column grid__column--6">
+                        <div class="value-item">
+                            <div class="value-item__title">Blog project</div>
+                            <div class="value-item__text">
+                                Comming soon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__column grid__column--6">
+                        <div class="value-item">
+                            <div class="value-item__title">Accept Payment Tutoliar</div>
+                            <div class="value-item__text">
+                                Comming soon.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__column grid__column--6">
+                        <div class="value-item">
+                            <div class="value-item__title">Charge Direct Tutoliar</div>
+                            <div class="value-item__text">
+                                Comming soon
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    </section>
+    <section class="global-signup">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__column grid__column--6 grid__column--centered">
+                    <h2 class="global-signup__primary-title">
+                        Sign Up. Go Live. Get Paid.
+                    </h2>
+                    <h3 class="global-signup__secondary-title">
+                        Shoket is an easy to setup, complete payments solution for your business. Try Out.
+                    </h3>
+                    <ul class="global-signup__call-to-action">
+                        <li class="global-signup__button">
+                            <a class="button button--blue" href="{{ url_for('registration_page.register_page') }}">Create Account</a>
+                        </li>
+                        <li class="global-signup__button">
+                            <a class="button button--default" href="{{ url_for('login_page.logins_page') }}">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="global-footer">
+        <div class="container">
+            <div class="global-footer__grid grid">
+                <div class="grid__column grid__column--3 grid__column--6-s">
+                    <div class="global-footer__menu-container">
+                        <h4 class="global-footer__menu-header">Product</h4>
+                        <ul class="global-footer__menu">
+                            <li><a href="">Payment API</a></li>
+                            <li><a href="">Payment Link</a></li>
+                            <li><a href="">Payment Number</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid__column grid__column--3 grid__column--6-s">
+                    <h4 class="global-footer__menu-header">Developers</h4>
+                    <ul class="global-footer__menu">
+                        <li><a href="">Libraries and SDKs</a></li>
+                        <li><a href="">API Documentation</a></li>
+                        <li><a href="">Code Samples</a></li>
+                    </ul>
+                </div>
+                <div class="grid__column grid__column--6">
+                    <div class="grid__column grid__column--6 grid__column--6-s">
+                        <h4 class="global-footer__menu-header">Dar Es Salaam</h4>
+                        <p class="global-footer__address">Address.</p>
+                        <a href="" class="global-footer__contact">hey@shoket.com</a>
+                    </div>
+                </div>
+                <div class="grid__column grid__column--12">
+                    <div class="global-footer__copyright">© 2021, Shoket Payments Limited</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='shoket_web/developer/js/vendor/animate.min.js') }}"></script>
+</body>
+
+</html>
